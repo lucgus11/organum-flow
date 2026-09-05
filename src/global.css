@@ -1,0 +1,108 @@
+/* On ne charge que les sous-ensembles latin + latin-ext (accents français inclus) :
+   l'app est mise en cache intégralement pour l'usage hors-ligne, inutile d'y embarquer
+   le cyrillique, le grec ou le vietnamien. */
+@import "@fontsource-variable/fraunces/wght.css";
+@import "@fontsource/ibm-plex-sans/latin-400.css";
+@import "@fontsource/ibm-plex-sans/latin-ext-400.css";
+@import "@fontsource/ibm-plex-sans/latin-500.css";
+@import "@fontsource/ibm-plex-sans/latin-ext-500.css";
+@import "@fontsource/ibm-plex-sans/latin-600.css";
+@import "@fontsource/ibm-plex-sans/latin-ext-600.css";
+
+:root {
+  /* Couleurs — identité "instrument à vent / boîtier en bois et laiton" */
+  --ink: #0a0c10;               /* noir profond, fond de l'écran d'exercice */
+  --walnut-950: #171009;         /* fond général de l'app / dashboard */
+  --walnut-900: #241a10;         /* panneaux, cartes */
+  --walnut-800: #362715;         /* bordures, séparateurs de panneaux */
+  --walnut-700: #4a361f;         /* éléments interactifs non sélectionnés */
+
+  --brass: #c9a227;               /* accent principal */
+  --brass-light: #e4c155;         /* survol / accent clair */
+  --brass-dim: #7a672c;           /* accent atténué (texte secondaire sur fond clair) */
+
+  --reed-green: #4c9a6a;          /* feedback : rythme régulier */
+  --reed-green-glow: #7fd8a3;
+  --copper-amber: #d98f3b;        /* feedback : rythme décalé */
+  --copper-amber-glow: #f4b46b;
+
+  --parchment: #f1e9d8;           /* texte principal sur fond sombre */
+  --parchment-dim: #a89a82;       /* texte secondaire */
+  --parchment-faint: #6f6455;     /* texte tertiaire / désactivé */
+
+  --font-display: "Fraunces Variable", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--walnut-950);
+  color: var(--parchment);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  color: var(--parchment);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--brass-dim);
+  color: var(--ink);
+}
+
+/* Respecte la préférence système de réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus clavier toujours visible, y compris sur l'écran d'exercice sombre */
+:focus-visible {
+  outline: 2px solid var(--brass-light);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
