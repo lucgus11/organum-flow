@@ -1,0 +1,35 @@
+.pulse-circle {
+  position: relative;
+  width: min(52vw, 280px);
+  height: min(52vw, 280px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-circle__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--walnut-700);
+  transition: border-color 480ms ease, box-shadow 480ms ease;
+}
+
+.pulse-circle--steady .pulse-circle__ring {
+  border-color: var(--reed-green);
+  box-shadow: 0 0 28px -4px var(--reed-green-glow);
+}
+
+.pulse-circle--off .pulse-circle__ring {
+  border-color: var(--copper-amber);
+  box-shadow: 0 0 28px -4px var(--copper-amber-glow);
+}
+
+.pulse-circle__core {
+  width: 68%;
+  height: 68%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, var(--brass-light), var(--brass) 62%, #8a6f1c 100%);
+  box-shadow: 0 0 46px -6px rgba(201, 162, 39, 0.55);
+  will-change: transform;
+}

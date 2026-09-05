@@ -1,0 +1,10 @@
+.instrument-animation {
+  width: min(70vw, 320px);
+  opacity: 0.85;
+}
+
+.instrument-animation__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
