@@ -1,0 +1,35 @@
+{
+  "id": "/",
+  "name": "Organum Flow — Échauffement Orgue & Accordéon",
+  "short_name": "Organum Flow",
+  "description": "Échauffement guidé pour organistes et accordéonistes : indépendance des mains, régularité du soufflet, gammes et pédalier, avec écoute micro ou MIDI et fonctionnement 100% hors-ligne.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "background_color": "#10131A",
+  "theme_color": "#10131A",
+  "lang": "fr",
+  "categories": ["music", "education", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
